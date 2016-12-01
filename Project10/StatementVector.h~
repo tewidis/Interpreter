@@ -1,0 +1,23 @@
+struct statement {
+	String command;
+	String text;
+	Expr* expression;
+};
+
+struct StatementVector {
+	int len;
+	statement* stat;
+};
+
+extern StatementVector statementBlock;
+
+void add(statement stat) {
+	statementBlock.len += 1;
+	statement* p = (statement*) malloc(statementVector.len * sizeof(statement);
+	for (int k = 0; k < statementBlock.len - 1; k += 1) {
+		p[k] = statementBlock.stat[k];
+	}
+	if(statementBlock.stat != nullptr) { free (statementBlock.stat); }
+	p[statementBlock.len - 1] = stat;
+	statementBlock.stat = p;
+}

@@ -1,0 +1,33 @@
+#include "String.h"
+
+struct function {
+	String name;
+	//VariableNode parameters[];
+	StatementVector* body;
+};
+
+struct funcVec {
+	int len;
+	function* func;
+};
+
+funcVec FunctionDatabase;
+
+void addFunction(function* newfunc) {
+	FunctionDatabase.len += 1;
+	function* p = (function*) malloc(FunctionDatabase.len * sizeof(function));
+	for (int k = 0; k < FuncionDatabase.len - 1; k += 1) {
+		p[k] = FunctionDatabase.func[k];
+	}
+	if(FunctionDatabase.func != nullptr) { free (FunctionDatabase.func); }
+	p[FunctionDatabase.len - 1] = *newfunc;
+	FunctionDatabase.func = p;
+}
+
+void executeFunction(String funcname) {
+	for(int i = 0; i < FunctionDatabase.len; i += 1) {
+		if(funcname == FunctionDatabase.func[i].name) {
+			int ret = evaluateStructure(FunctionDatabase.func[i].body);
+		}
+	}
+}

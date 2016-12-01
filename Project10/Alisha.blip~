@@ -1,0 +1,8 @@
+var x 1
+// output x
+text \n
+do < x 10
+	text "Hello Alisha\n"
+	set x + x 1
+od
+	
